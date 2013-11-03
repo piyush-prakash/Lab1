@@ -10,7 +10,7 @@ public class RationalTest extends TestCase {
 
     // Create new test
     public RationalTest (String name) {
-        super(name); 
+        super(name);
     }
 
     public void testEquality() {
