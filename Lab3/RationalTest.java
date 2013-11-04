@@ -10,7 +10,7 @@ public class RationalTest extends TestCase {
 
     // Create new test
     public RationalTest (String name) {
-        super(name); 
+        super(name);
     }
 
     public void testEquality() {
@@ -41,6 +41,15 @@ public class RationalTest extends TestCase {
             new Rational(1,3)));
     }
 
+    public void testEquals(){
+    	assertFalse(new Rational(1,2).equals(null));
+    	assertTrue(new Rational(1,2).equals(new Rational(1,2)));
+    	assertTrue(new Rational(1,2).equals(new Rational(-1,-2)));
+    	assertTrue(new Rational(-1,2).equals(new Rational(1,-2)));
+    	assertTrue(new Rational(4999,1000).equals(new Rational(-4999,-1000)));
+    	assertTrue(new Rational(6,3).equals(new Rational(-2,-1)));
+    }
+    
     public void testAccessors() {
     	assertEquals(new Rational(2,3).numerator(), 2);
     	assertEquals(new Rational(2,3).denominator(), 3);
@@ -210,6 +219,12 @@ public class RationalTest extends TestCase {
 	public void testMain(){
 		Rational a = new Rational(1,2);
 		a.main(null);
+	}
+	
+	public void testException(){
+		IllegalArgumentToSquareRootException myexp = new IllegalArgumentToSquareRootException(HALF);
+		myexp.toString();
+		
 	}
 	
     public static void main(String args[]) {
